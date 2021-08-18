@@ -5,7 +5,11 @@ export default function StackNavigation() {
   const Stack = createNativeStackNavigator();
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Welcome" component={Welcome} />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name="Welcome"
+        component={Welcome}
+      />
     </Stack.Navigator>
   );
 }
