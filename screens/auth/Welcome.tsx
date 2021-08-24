@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text, Pressable } from "native-base";
+import { Box, Text, Pressable, HStack } from "native-base";
 import { Logo } from "../../components/icons";
 import { FontAwesome } from "@expo/vector-icons";
 export default function Welcome() {
@@ -7,9 +7,11 @@ export default function Welcome() {
     <Box>
       <Logo height="32" width="32" />
       <Text>Welcome to airbnb</Text>
-      <Pressable bg="white">
-        <FontAwesome name="facebook-f" />
-        <Text>Continue with Facebook</Text>
+      <Pressable py="3" rounded={30} bg="white">
+        <HStack justifyContent="center">
+          <FontAwesome name="facebook-f" />
+          <Text>Continue with Facebook</Text>
+        </HStack>
       </Pressable>
     </Box>
   );
