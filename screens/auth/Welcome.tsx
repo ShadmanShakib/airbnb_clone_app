@@ -13,6 +13,9 @@ export default function Welcome() {
           <Text>Continue with Facebook</Text>
         </HStack>
       </Pressable>
+      <Pressable py="3" rounded={30} bg="white">
+        <Text textAlign="center">Create a new account</Text>
+      </Pressable>
     </Box>
   );
 }
