@@ -1,7 +1,12 @@
 import React from "react";
 import { Box, Text, Input, Button, Switch, HStack } from "native-base";
 import { AntDesign } from "@expo/vector-icons";
-export default function EnterEmail() {
+
+interface Props {
+  navigation: any;
+}
+
+export default function EnterEmail({ navigation }: Props) {
   return (
     <Box h="100%" pt="20" px="5" bg="blue.400">
       <Text mb="10" color="white" fontSize="3xl">
@@ -25,8 +30,18 @@ export default function EnterEmail() {
         </Text>
         <Switch ml="3" h="6" onTrackColor="blue.600" />
       </HStack>
-      <Button w="10" h="10" bg="blue.400" rounded="full" p="0">
-        <AntDesign name="rightcircle" size={36} color="white" />
+      <Button
+        pos="absolute"
+        bottom="4"
+        right="6"
+        w="10"
+        h="10"
+        bg="blue.400"
+        rounded="full"
+        p="0"
+        onPress={() => navigation.navigate("EnterPassword")}
+      >
+        <AntDesign name="rightcircle" size={40} color="white" />
       </Button>
     </Box>
   );
