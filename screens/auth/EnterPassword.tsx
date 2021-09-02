@@ -1,7 +1,12 @@
 import React from "react";
-import { Box, Input, Text } from "native-base";
+import { Box, Button, Input, Text } from "native-base";
+import { AntDesign } from "@expo/vector-icons";
 
-export default function EnterPassword() {
+interface Props {
+  navigation: any;
+}
+
+export default function EnterPassword({ navigation }: Props) {
   return (
     <Box px="6" pt="20" h="100%" bg="blue.400">
       <Text fontSize="3xl" color="white">
@@ -17,6 +22,19 @@ export default function EnterPassword() {
         color="white"
         _focus={{ borderColor: "white" }}
       />
+      <Button
+        pos="absolute"
+        bottom="4"
+        right="6"
+        w="10"
+        h="10"
+        bg="blue.400"
+        rounded="full"
+        p="0"
+        onPress={() => navigation.navigate("EnterPassword")}
+      >
+        <AntDesign name="rightcircle" size={40} color="white" />
+      </Button>
     </Box>
   );
 }
