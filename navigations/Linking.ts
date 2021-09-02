@@ -5,7 +5,8 @@ export default {
   config: {
     screens: {
       Welcome: "Welcome",
-      EnterName: "EnterName",
+      EnterName: "name",
+      EnterEmail: "email",
     },
   },
 };

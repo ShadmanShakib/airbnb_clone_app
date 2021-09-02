@@ -6,7 +6,7 @@ import { FontAwesome } from "@expo/vector-icons";
 export default function Welcome({ navigation }: any) {
   return (
     <Box h="100%" px="6" bg="blue.400">
-      <Text mt="10" textAlign="right" color="white">
+      <Text my="10" textAlign="right" color="white">
         Log in
       </Text>
 
@@ -15,7 +15,7 @@ export default function Welcome({ navigation }: any) {
       <Text mt="10" mb="10" fontSize="2xl" color="white">
         Welcome to Airbnb
       </Text>
-      <Button bg="white" _text={{ color: "blue.500" }} borderRadius={30}>
+      <Button mb="5" bg="white" _text={{ color: "blue.500" }} borderRadius={30}>
         Continue with Facebook
       </Button>
       <Button

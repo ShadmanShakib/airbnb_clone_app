@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
-import { EnterName, Welcome } from "../screens/auth";
+import { EnterEmail, EnterName, Welcome } from "../screens/auth";
 export default function StackNavigation() {
   const Stack = createNativeStackNavigator();
   return (
@@ -13,6 +13,11 @@ export default function StackNavigation() {
       <Stack.Screen
         name="EnterName"
         component={EnterName}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="EnterEmail"
+        component={EnterEmail}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
