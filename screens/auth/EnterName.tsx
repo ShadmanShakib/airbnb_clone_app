@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Text, Input, Button } from "native-base";
 import { TextInput, StyleSheet } from "react-native";
 import { buttonStyle } from "styled-system";
+import { AntDesign } from "@expo/vector-icons";
 
 interface Props {
   navigation: any;
@@ -31,13 +32,17 @@ export default function EnterName({ navigation }: Props) {
         variant="underlined"
       />
       <Button
-        mt="5"
-        borderRadius={30}
-        bg="white"
-        _text={{ color: "blue.400" }}
+        pos="absolute"
+        bottom="4"
+        right="6"
+        w="10"
+        h="10"
+        bg="blue.400"
+        rounded="full"
+        p="0"
         onPress={() => navigation.navigate("EnterEmail")}
       >
-        Next
+        <AntDesign name="rightcircle" size={40} color="white" />
       </Button>
     </Box>
   );
