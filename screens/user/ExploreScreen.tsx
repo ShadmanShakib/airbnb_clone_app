@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, Image, Box, ScrollView } from "native-base";
 
-export default function Explore() {
+export default function ExploreScreen() {
   return (
     <ScrollView>
       <Text></Text>

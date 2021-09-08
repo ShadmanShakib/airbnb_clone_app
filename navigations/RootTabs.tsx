@@ -1,22 +1,33 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Explore, Inbox, Profile, Trips, Wishlists } from "../screens/user";
+import { RootTabParamList } from "../types";
+import {
+  ExploreScreen,
+  InboxScreen,
+  ProfileScreen,
+  TripsScreen,
+  WishlistsScreen,
+} from "../screens/user";
 import { Feather, AntDesign, SimpleLineIcons } from "@expo/vector-icons";
 import { Logo } from "../components/icons";
-const Tab = createBottomTabNavigator();
-export default function HomeTab() {
+const Tab = createBottomTabNavigator<RootTabParamList>();
+export default function RootTabs() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      initialRouteName="Explore"
+      screenOptions={{
+        tabBarActiveTintColor: "black",
+      }}
+    >
       <Tab.Screen
         name="Explore"
-        component={Explore}
+        component={ExploreScreen}
         options={{
           headerShown: false,
-          tabBarActiveTintColor: "#FF385c",
           tabBarIcon: ({ focused }) => (
             <Feather
               name="search"
-              color={focused ? "#FF385C" : "grey"}
+              color={focused ? "#FF385C" : "gray"}
               size={24}
             />
           ),
@@ -24,10 +35,9 @@ export default function HomeTab() {
       />
       <Tab.Screen
         name="Wishlists"
-        component={Wishlists}
+        component={WishlistsScreen}
         options={{
           headerShown: false,
-          tabBarActiveTintColor: "#FF385c",
           tabBarIcon: ({ focused }) => (
             <AntDesign
               color={focused ? "#FF385C" : "grey"}
@@ -39,10 +49,9 @@ export default function HomeTab() {
       />
       <Tab.Screen
         name="Trips"
-        component={Trips}
+        component={TripsScreen}
         options={{
           headerShown: false,
-          tabBarActiveTintColor: "#FF385c",
           tabBarIcon: ({ focused }) => (
             <Logo color={focused ? "#FF385C" : "grey"} />
           ),
@@ -50,10 +59,9 @@ export default function HomeTab() {
       />
       <Tab.Screen
         name="Inbox"
-        component={Inbox}
+        component={InboxScreen}
         options={{
           headerShown: false,
-          tabBarActiveTintColor: "#FF385c",
           tabBarIcon: ({ focused }) => (
             <Feather
               color={focused ? "#FF385C" : "grey"}
@@ -64,11 +72,10 @@ export default function HomeTab() {
         }}
       />
       <Tab.Screen
-        name="Log In"
-        component={Profile}
+        name="Profile"
+        component={ProfileScreen}
         options={{
           headerShown: false,
-          tabBarActiveTintColor: "#FF385c",
           tabBarIcon: ({ focused }) => (
             <SimpleLineIcons
               color={focused ? "#FF385C" : "grey"}

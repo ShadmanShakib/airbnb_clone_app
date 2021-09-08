@@ -1,14 +1,35 @@
 import * as Linking from "expo-linking";
-
-export default {
+import { LinkingOptions } from "@react-navigation/native";
+import { RootStackParamList } from "../types";
+const linking: LinkingOptions<RootStackParamList> = {
   prefixes: [Linking.makeUrl("/")],
   config: {
     screens: {
-      Home: {
+      Root: {
         screens: {
           Explore: {
             screens: {
-              Explore: "explore",
+              ExploreScreen: "explore",
+            },
+          },
+          Wishlists: {
+            screens: {
+              WishlistsScreen: "wishlists",
+            },
+          },
+          Trips: {
+            screens: {
+              TripsScreen: "trips",
+            },
+          },
+          Inbox: {
+            screens: {
+              InboxScreen: "inbox",
+            },
+          },
+          Profile: {
+            screens: {
+              ProfileScreen: "profile",
             },
           },
         },
@@ -16,3 +37,5 @@ export default {
     },
   },
 };
+
+export default linking;
