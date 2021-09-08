@@ -6,7 +6,7 @@ export default function Hero() {
     <Box position="relative">
       <Image
         zIndex={1}
-        h={450}
+        h={500}
         w="100%"
         alt="HeroImage"
         source={{
@@ -15,15 +15,15 @@ export default function Hero() {
       />
       <Flex
         w="100%"
-        h={450}
+        h={500}
         justifyContent="center"
         alignItems="center"
         direction="column"
         zIndex={2}
         position="absolute"
       >
-        <Text fontWeight="semibold">Not sure where to go?</Text>
-        <Text fontWeight="semibold">Perfect.</Text>
+        <Text fontWeight="bold">Not sure where to go?</Text>
+        <Text fontWeight="bold">Perfect.</Text>
       </Flex>
     </Box>
   );
