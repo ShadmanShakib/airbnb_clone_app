@@ -4,10 +4,15 @@ export default {
   prefixes: [Linking.makeUrl("/")],
   config: {
     screens: {
-      Welcome: "welcome",
-      EnterName: "name",
-      EnterEmail: "email",
-      EnterPassword: "password",
+      Home: {
+        screens: {
+          Explore: {
+            screens: {
+              Explore: "explore",
+            },
+          },
+        },
+      },
     },
   },
 };
