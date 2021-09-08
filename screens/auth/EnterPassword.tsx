@@ -9,10 +9,10 @@ interface Props {
 export default function EnterPassword({ navigation }: Props) {
   return (
     <Box px="6" pt="20" h="100%" bg="blue.400">
-      <Text fontSize="3xl" color="white">
+      <Text mb="5" fontSize="3xl" color="white">
         Create a password
       </Text>
-      <Text color="white">
+      <Text mb="5" color="white">
         Your passowrd must include at least one symbol and be 8 or more
         character long.
       </Text>
