@@ -1,5 +1,5 @@
-export { default as Explore } from "./Explore";
-export { default as Wishlists } from "./Wishlists";
-export { default as Trips } from "./Trips";
-export { default as Inbox } from "./Inbox";
-export { default as Profile } from "./Profile";
+export { default as ExploreScreen } from "./ExploreScreen";
+export { default as WishlistsScreen } from "./WishlistsScreen";
+export { default as TripsScreen } from "./TripsScreen";
+export { default as InboxScreen } from "./InboxScreen";
+export { default as ProfileScreen } from "./ProfileScreen";
