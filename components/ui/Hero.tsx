@@ -1,7 +1,10 @@
 import React from "react";
 import { Box, Text, Image, Flex, Button } from "native-base";
 import SearchButton from "./SearchButton";
-export default function Hero() {
+interface IHero {
+  handlePress: () => void;
+}
+export default function Hero(props: IHero) {
   return (
     <Box position="relative">
       <Image
@@ -14,7 +17,7 @@ export default function Hero() {
         }}
       />
 
-      <SearchButton />
+      <SearchButton handlePress={() => props.handlePress()} />
       <Flex
         w="100%"
         h={550}
