@@ -3,6 +3,7 @@ import React from "react";
 import RootTabs from "./RootTabs";
 import { RootStackParamList } from "../types";
 import { AuthModal } from "../screens/auth";
+import { SearchModal } from "../screens/user";
 
 export default function RootStack() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -17,6 +18,11 @@ export default function RootStack() {
         <Stack.Screen
           name="AuthModal"
           component={AuthModal}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SearchModal"
+          component={SearchModal}
           options={{ headerShown: false }}
         />
       </Stack.Group>
