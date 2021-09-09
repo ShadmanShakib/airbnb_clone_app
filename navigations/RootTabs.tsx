@@ -53,7 +53,7 @@ export default function RootTabs() {
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <Logo color={focused ? "#FF385C" : "grey"} />
+            <Logo height="24" width="24" color={focused ? "#FF385C" : "grey"} />
           ),
         }}
       />

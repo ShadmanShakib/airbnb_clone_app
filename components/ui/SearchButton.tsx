@@ -7,7 +7,7 @@ export default function SearchButton() {
       <Button bg="white" w="80%" borderRadius={30}>
         <HStack justifyContent="center">
           <Feather name="search" color="#FF385C" size={20} />
-          Where are you going?
+          <Text>Where are you going?</Text>
         </HStack>
       </Button>
     </Flex>
