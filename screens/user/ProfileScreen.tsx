@@ -16,7 +16,7 @@ const MenuItem = (props: Props) => {
     </Box>
   );
 };
-export default function ProfileScreen() {
+export default function ProfileScreen({ navigation }: any) {
   return (
     <ScrollView pt="20" px="6">
       <Box>
@@ -24,7 +24,13 @@ export default function ProfileScreen() {
           Your Profile
         </Text>
         <Text>Log in to start planning your next trip.</Text>
-        <Button my="5" bg="#FF385F" _text={{ color: "white" }}>
+        <Button
+          onPress={() => navigation.navigate("AuthModal")}
+          my="5"
+          bg="#FF385F"
+          _pressed={{ bg: "#ff385f" }}
+          _text={{ color: "white" }}
+        >
           Log in
         </Button>
       </Box>
