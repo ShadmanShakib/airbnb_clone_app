@@ -7,11 +7,20 @@ import { Google } from "../../components/icons";
 import { PrimaryButton } from "../../components/Buttons";
 
 export default function EmailModal({ navigation }: any) {
+  //type definition
+  type FormData = {
+    email: string;
+  };
+  //useForm hook
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormData>();
+
+  //handling submit of form
+  const onSubmit = handleSubmit((data) => {});
+  //main component
   return (
     <Box px="6" pt="10">
       <Pressable onPress={() => navigation.goBack()}>

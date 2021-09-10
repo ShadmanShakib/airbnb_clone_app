@@ -6,6 +6,7 @@ import RootStack from "./navigations/RootStack";
 import { Linking } from "./navigations";
 import { theme } from "./components/ui";
 import firebase from "firebase/app";
+import { MainProvider } from "./context";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBWjpdfGbxfUtS41DCn1mBFxu8oAMBX6H4",
@@ -22,8 +23,10 @@ export default function App() {
   return (
     <NativeBaseProvider theme={theme}>
       <NavigationContainer linking={Linking}>
-        <RootStack />
-        <StatusBar style="auto" />
+        <MainProvider>
+          <RootStack />
+          <StatusBar style="auto" />
+        </MainProvider>
       </NavigationContainer>
     </NativeBaseProvider>
   );
