@@ -5,12 +5,15 @@ import { WithButton } from "../../components/ui";
 import { AntDesign, SimpleLineIcons, Entypo } from "@expo/vector-icons";
 import { Google } from "../../components/icons";
 import { PrimaryButton } from "../../components/Buttons";
+import { AuthContext } from "../../context";
 
 export default function EmailModal({ navigation }: any) {
   //type definition
   type FormData = {
     email: string;
   };
+  //getting value from context
+  const { setUserEmail } = React.useContext(AuthContext);
   //useForm hook
   const {
     control,
@@ -19,7 +22,9 @@ export default function EmailModal({ navigation }: any) {
   } = useForm<FormData>();
 
   //handling submit of form
-  const onSubmit = handleSubmit((data) => {});
+  const onSubmit = handleSubmit((data) => {
+    setUserEmail(data.email);
+  });
   //main component
   return (
     <Box px="6" pt="10">
@@ -49,7 +54,12 @@ export default function EmailModal({ navigation }: any) {
         name="email"
         defaultValue=""
       />
-      <PrimaryButton onPress={() => navigation.navigate("EnterPassword")}>
+      <PrimaryButton
+        onPress={() => {
+          onSubmit();
+          navigation.navigate("EnterPassword");
+        }}
+      >
         <Text color="white">Continue</Text>
       </PrimaryButton>
       <Text my="6" textAlign="center">
