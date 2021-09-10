@@ -2,8 +2,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 import RootTabs from "./RootTabs";
 import { RootStackParamList } from "../types";
-import { AuthModal } from "../screens/auth";
+import { AuthModal, EnterPassword } from "../screens/auth";
 import { SearchModal } from "../screens/user";
+import EmailModal from "../screens/auth/EmailModal";
 
 export default function RootStack() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -23,6 +24,16 @@ export default function RootStack() {
         <Stack.Screen
           name="SearchModal"
           component={SearchModal}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="EmailModal"
+          component={EmailModal}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="EnterPassword"
+          component={EnterPassword}
           options={{ headerShown: false }}
         />
       </Stack.Group>
