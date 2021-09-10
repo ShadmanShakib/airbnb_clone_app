@@ -11,30 +11,14 @@ import {
 } from "native-base";
 import { MaterialCommunityIcons, AntDesign, Entypo } from "@expo/vector-icons";
 import { Google } from "../../components/icons";
-
-interface Props {
-  title: string;
-  children?: any;
-}
-const CustomButton = (props: Props) => {
-  return (
-    <Pressable mb="3" px="8" rounded="lg" py="3" w="100%" borderWidth={2}>
-      <HStack>
-        {props.children}
-        <Text textAlign="center" w="90%" color="gray.700">
-          {props.title}
-        </Text>
-      </HStack>
-    </Pressable>
-  );
-};
+import { WithButton } from "../../components/ui";
 
 export default function AuthModal({ navigation }: any) {
   const [phone, setPhone] = React.useState("");
   return (
     <Box>
-      <ScrollView pt="12" px="5">
-        <Pressable onPress={() => navigation.goBack()} mb="2">
+      <ScrollView mt="5" px="5">
+        <Pressable pt="5" onPress={() => navigation.goBack()} mb="2">
           <Entypo name="cross" size={24} color="black" />
         </Pressable>
         <Box>
@@ -60,6 +44,7 @@ export default function AuthModal({ navigation }: any) {
             data rates apply.
           </Text>
           <Button
+            mt="3"
             _pressed={{ bg: "#ff385f" }}
             _text={{ color: "white" }}
             bg="#FF385F"
@@ -70,7 +55,7 @@ export default function AuthModal({ navigation }: any) {
         <Text my="5" textAlign="center">
           or
         </Text>
-        <CustomButton
+        <WithButton
           children={
             <MaterialCommunityIcons
               name="email-outline"
@@ -79,16 +64,17 @@ export default function AuthModal({ navigation }: any) {
             />
           }
           title="Continue with Email"
+          handlePress={() => navigation.navigate("EmailModal")}
         />
-        <CustomButton
+        <WithButton
           children={<AntDesign name="facebook-square" size={24} color="blue" />}
           title="Continue with Facebook"
         />
-        <CustomButton
+        <WithButton
           children={<Google height="20" width="20" />}
           title="Continue with Gooole"
         />
-        <CustomButton
+        <WithButton
           children={<AntDesign name="apple1" size={24} color="black" />}
           title="Continue with Apple"
         />

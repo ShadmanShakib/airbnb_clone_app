@@ -35,6 +35,7 @@ const linking: LinkingOptions<RootStackParamList> = {
         },
       },
       AuthModal: "auth",
+      EmailModal: "email",
     },
   },
 };
