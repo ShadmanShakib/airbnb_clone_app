@@ -18,7 +18,8 @@ const firebaseConfig = {
   measurementId: "G-5EBZ42Z7SP",
 };
 
-const app = firebase.initializeApp(firebaseConfig);
+const app = firebase.apps.length || firebase.initializeApp(firebaseConfig);
+
 export default function App() {
   return (
     <NativeBaseProvider theme={theme}>
