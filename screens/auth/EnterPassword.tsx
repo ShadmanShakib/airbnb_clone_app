@@ -12,7 +12,7 @@ export default function EnterPassword({ navigation }: any) {
     password: string;
   };
   //AuthContext
-  const { email } = React.useContext(AuthContext);
+  const { email, setUserUid, uid } = React.useContext(AuthContext);
 
   //useForm hook of react-hook-form
   const {
@@ -28,6 +28,7 @@ export default function EnterPassword({ navigation }: any) {
       .createUserWithEmailAndPassword(email, data.password)
       .then((userCredential) => {
         const user = userCredential.user;
+        if (user) setUserUid(user.uid);
       });
   });
 
@@ -41,7 +42,7 @@ export default function EnterPassword({ navigation }: any) {
         <AntDesign name="arrowleft" size={24} />
       </Pressable>
       <Text mt="5" fontSize="2xl" fontWeight="bold" mb="5">
-        Log In
+        Log In as {uid}
       </Text>
       <Controller
         control={control}
@@ -63,7 +64,7 @@ export default function EnterPassword({ navigation }: any) {
         name="password"
         defaultValue=""
       />
-      <PrimaryButton>
+      <PrimaryButton onPress={onSubmit}>
         <Text color="white">Continue</Text>
       </PrimaryButton>
       <Text mt="5" fontWeight="bold" textAlign="center" underline={true}>

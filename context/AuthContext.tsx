@@ -2,10 +2,14 @@ import React from "react";
 
 type State = {
   email: string;
+  uid: string;
+  loading: boolean;
 };
 
 const initialState = {
   email: "",
+  uid: "",
+  loading: false,
 };
 
 const AuthContext = React.createContext<State | any>(initialState);
@@ -17,13 +21,21 @@ type Action =
     }
   | {
       type: "LOG_IN";
+    }
+  | {
+      type: "SET_UID";
+      payload: string;
     };
 
 const authReducer = (state: State, action: Action) => {
   switch (action.type) {
     case "SET_EMAIL":
       return { ...state, email: action.payload };
-
+    case "SET_UID":
+      return {
+        ...state,
+        uid: action.payload,
+      };
     default:
       return state;
   }
@@ -38,7 +50,14 @@ export const AuthProvider = (props: IAuthProvider) => {
     (email: string) => dispatch({ type: "SET_EMAIL", payload: email }),
     [dispatch]
   );
-  const value = React.useMemo(() => ({ ...state, setUserEmail }), [state]);
+  const setUserUid = React.useCallback(
+    (value: string) => dispatch({ type: "SET_UID", payload: value }),
+    [dispatch]
+  );
+  const value = React.useMemo(
+    () => ({ ...state, setUserEmail, setUserUid }),
+    [state]
+  );
   return <AuthContext.Provider value={value} {...props} />;
 };
 
