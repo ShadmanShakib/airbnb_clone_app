@@ -31,7 +31,7 @@ export default function TryHosting() {
       </Flex>
 
       <Image
-        borderRadius={10}
+        borderRadius={20}
         alt="hosting"
         height="460px"
         w="100%"
