@@ -3,6 +3,7 @@ import { Text, ScrollView, Box, FlatList } from "native-base";
 import { Hero } from "../../components/ui";
 import { PlaceCard, DiscoverCard } from "../../components/Cards";
 import { PlacesData, DiscoverData } from "../../constants";
+import TryHosting from "../../components/Cards/TryHosting";
 interface Item {
   title: string;
   alt: string;
@@ -34,6 +35,7 @@ export default function ExploreScreen({ navigation }: any) {
           renderItem={renderItem}
         />
       </Box>
+      <TryHosting />
       <Box mt="6">
         <Text ml="6" mb="4" fontSize="2xl" fontWeight="bold">
           Discover things to do
