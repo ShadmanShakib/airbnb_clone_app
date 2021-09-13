@@ -20,7 +20,10 @@ export default function ExploreScreen({ navigation }: any) {
 
   return (
     <ScrollView bg="white">
-      <Hero handlePress={handlePress} />
+      <Hero
+        handleFelxible={() => navigation.navigate("Flexible")}
+        handlePress={handlePress}
+      />
       <Text mt="6" ml="6" fontSize="xl" fontWeight="bold">
         Explore Nearby
       </Text>
