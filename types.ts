@@ -15,6 +15,7 @@ export type RootStackParamList = {
   SearchModal: undefined;
   EmailModal: undefined;
   EnterPassword: undefined;
+  Flexible: undefined;
 };
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
   NativeStackScreenProps<RootStackParamList, Screen>;

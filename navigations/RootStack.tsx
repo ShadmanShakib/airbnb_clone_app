@@ -3,7 +3,7 @@ import React from "react";
 import RootTabs from "./RootTabs";
 import { RootStackParamList } from "../types";
 import { AuthModal, EnterPassword } from "../screens/auth";
-import { SearchModal } from "../screens/user";
+import { Flexible, SearchModal } from "../screens/user";
 import EmailModal from "../screens/auth/EmailModal";
 
 export default function RootStack() {
@@ -15,6 +15,7 @@ export default function RootStack() {
         options={{ headerShown: false }}
         component={RootTabs}
       />
+      <Stack.Screen name="Flexible" component={Flexible} />
       <Stack.Group screenOptions={{ presentation: "modal" }}>
         <Stack.Screen
           name="AuthModal"

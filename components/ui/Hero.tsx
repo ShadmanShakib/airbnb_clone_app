@@ -3,6 +3,7 @@ import { Box, Text, Image, Flex, Button } from "native-base";
 import SearchButton from "./SearchButton";
 interface IHero {
   handlePress: () => void;
+  handleFelxible: () => void;
 }
 export default function Hero(props: IHero) {
   return (
@@ -39,6 +40,7 @@ export default function Hero(props: IHero) {
           bg="white"
           px="8"
           rounded={20}
+          onPress={props.handleFelxible}
         >
           I'm flexible
         </Button>
