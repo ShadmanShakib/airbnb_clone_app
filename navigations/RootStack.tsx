@@ -15,7 +15,11 @@ export default function RootStack() {
         options={{ headerShown: false }}
         component={RootTabs}
       />
-      <Stack.Screen name="Flexible" component={Flexible} />
+      <Stack.Screen
+        name="Flexible"
+        options={{ headerShown: false }}
+        component={Flexible}
+      />
       <Stack.Group screenOptions={{ presentation: "modal" }}>
         <Stack.Screen
           name="AuthModal"
