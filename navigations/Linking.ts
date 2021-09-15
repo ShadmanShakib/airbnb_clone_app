@@ -38,6 +38,7 @@ const linking: LinkingOptions<RootStackParamList> = {
       EmailModal: "email",
       EnterPassword: "password",
       Flexible: "flexible",
+      SingleLoaction: "single",
     },
   },
 };

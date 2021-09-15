@@ -5,3 +5,4 @@ export { default as InboxScreen } from "./InboxScreen";
 export { default as ProfileScreen } from "./ProfileScreen";
 export { default as SearchModal } from "./SearchModal";
 export { default as Flexible } from "./Flexible";
+export { default as SingleLoaction } from "./SingleLocation";

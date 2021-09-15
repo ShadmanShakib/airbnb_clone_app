@@ -1,35 +1,16 @@
 import React from "react";
 import {
-  View,
   Text,
   Box,
   HStack,
   Button,
-  ScrollView,
   FlatList,
   Pressable,
+  Image,
 } from "native-base";
 import { AntDesign } from "@expo/vector-icons";
 import { SettingIcon } from "../icons";
-
-const Options = [
-  "Treehouses",
-  "Amazing Pool",
-  "Kezhan",
-  "Shoping ",
-  "Beachfront",
-  "Ryokans",
-  "Tiny homes",
-  "Islands",
-  "Cabins",
-  "Domes",
-  "Farms",
-  "Castles",
-  "Yurts",
-  "Campers",
-  "Houseboats",
-  "Boats",
-];
+import { MenuData } from "../../constants";
 
 interface FlexibleHeaderProps {
   handleGoBack: () => void;
@@ -59,17 +40,28 @@ export default function FlexibleHeader(props: FlexibleHeaderProps) {
         horizontal={true}
         renderItem={({ item }) => (
           <Pressable
+            px="3"
             borderBottomWidth={2}
-            borderColor={activeMenu === item ? "black" : "white"}
-            onPress={() => setActiveMenu(item)}
+            borderColor={activeMenu === item.title ? "black" : "white"}
+            onPress={() => setActiveMenu(item.title)}
           >
-            <Text fontWeight="bold" mx="3" my="3">
-              {item}
-            </Text>
+            <HStack py="3" alignItems="center">
+              <Box>
+                <Image
+                  alt={item.title}
+                  h="5"
+                  w="5"
+                  source={{ uri: item.url }}
+                />
+              </Box>
+              <Text pl="2" fontWeight="bold">
+                {item.title}
+              </Text>
+            </HStack>
           </Pressable>
         )}
-        keyExtractor={(item, index) => item + index}
-        data={Options}
+        keyExtractor={(item) => item.id}
+        data={MenuData}
       />
     </Box>
   );
