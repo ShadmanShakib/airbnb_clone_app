@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, ScrollView, FlatList, Image } from "native-base";
+import { View, Text, ScrollView, FlatList, Image, HStack } from "native-base";
 import { Locations } from "../../constants";
 
 interface ImageCardProps {
@@ -21,14 +21,23 @@ const ImageCard = ({ url }: ImageCardProps) => {
 
 type LocationCardProps = {
   title?: string;
+  price?: string;
+  distance?: string;
 };
 
 export default function LocationCard(props: LocationCardProps) {
+  const { title, price, distance } = props;
   return (
-    <View h="366px" w="366px">
-      <ScrollView horizontal={true}>
-        <ImageCard url={Locations[0]} />
-      </ScrollView>
+    <View mb="6">
+      <ImageCard url={Locations[0]} />
+
+      <HStack mt="2" justifyContent="space-between">
+        <Text fontSize="lg" fontWeight="bold">
+          {title}
+        </Text>
+        <Text fontSize="lg">${price}/night</Text>
+      </HStack>
+      <Text>{distance} kilometer's way</Text>
     </View>
   );
 }
