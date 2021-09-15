@@ -13,7 +13,6 @@ export default function Flexible({ navigation }: any) {
           <LocationCard title="Munnar, Kerala" price="118" distance="2,074" />
           <LocationCard title="Munnar, Kerala" price="118" distance="2,074" />
           <LocationCard title="Munnar, Kerala" price="118" distance="2,074" />
-          {/* <RoomCard /> */}
         </ScrollView>
       </View>
     </Box>

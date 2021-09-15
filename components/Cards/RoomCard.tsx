@@ -1,11 +1,12 @@
 import React from "react";
-import { View, Text, Image, FlatList, Button } from "native-base";
-import { Dimensions } from "react-native";
+import { View, Text, Image, FlatList, Button, Box } from "native-base";
+import { Dimensions, StyleSheet } from "react-native";
 import Animated, {
   useSharedValue,
   useAnimatedScrollHandler,
   useAnimatedGestureHandler,
   useAnimatedStyle,
+  withSpring,
 } from "react-native-reanimated";
 import { PanGestureHandler } from "react-native-gesture-handler";
 const URLs = [
@@ -27,30 +28,28 @@ export default function RoomCard() {
       ctx.offsetY = translateY.value;
     },
     onActive: (event, ctx) => {
-      translateX.value = ctx.offsetX + event.translationX;
-      translateY.value = ctx.offsetY + event.translationY;
+      translateX.value = withSpring(ctx.offsetX + event.translationX);
     },
   });
   const style = useAnimatedStyle(() => {
     return {
-      transform: [
-        { translateX: translateX.value },
-        { translateY: translateY.value },
-      ],
+      transform: [{ translateX: -(translateX.value * 366) }],
     };
   });
   return (
-    <View>
-      <PanGestureHandler {...{ onGestureEvent }}>
-        <Animated.View {...{ style }}>
-          <Image
-            source={{ uri: URLs[0] }}
-            width={width}
-            height={width}
-            alt="hello"
-          />
-        </Animated.View>
-      </PanGestureHandler>
+    <View onStartShouldSetResponder={(evt) => true} borderRadius={10}>
+      <Animated.Image
+        style={[defaultStyle.img, style]}
+        source={{ uri: URLs[0] }}
+      />
+
+      <Button onPress={() => (translateX.value = withSpring(1))}>Move</Button>
     </View>
   );
 }
+const defaultStyle = StyleSheet.create({
+  img: {
+    height: "366px",
+    width: "366px",
+  },
+});
