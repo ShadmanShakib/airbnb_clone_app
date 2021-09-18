@@ -39,6 +39,7 @@ const linking: LinkingOptions<RootStackParamList> = {
       EnterPassword: "password",
       Flexible: "flexible",
       SingleLoaction: "single",
+      SearchModal: "search",
     },
   },
 };
