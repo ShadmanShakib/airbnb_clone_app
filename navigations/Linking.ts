@@ -40,6 +40,7 @@ const linking: LinkingOptions<RootStackParamList> = {
       Flexible: "flexible",
       SingleLoaction: "single",
       SearchModal: "search",
+      MapView: "map",
     },
   },
 };

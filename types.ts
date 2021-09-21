@@ -17,6 +17,7 @@ export type RootStackParamList = {
   EnterPassword: undefined;
   Flexible: undefined;
   SingleLoaction: undefined;
+  MapView: undefined;
 };
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
   NativeStackScreenProps<RootStackParamList, Screen>;

@@ -11,18 +11,18 @@ interface IDiscoverCard {
 function Card(props: IDiscoverCard) {
   const { title, url, alt, discription } = props;
   return (
-    <View>
+    <View ml="6">
       <Image
-        height="272px"
-        width="272px"
+        height="256px"
+        width="256px"
         borderRadius={10}
         source={{ uri: url }}
         alt={alt}
       />
-      <Text my="2" fontWeight="bold" fontSize="lg">
+      <Text my="2" fontWeight="bold">
         {title}
       </Text>
-      <Text w="56">{discription}</Text>
+      <Text fontSize="sm">{discription}</Text>
     </View>
   );
 }

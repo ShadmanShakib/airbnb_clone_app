@@ -35,6 +35,7 @@ export default function Hero(props: IHero) {
           Perfect.
         </Text>
         <Button
+          _pressed={{ opacity: 0.6, bg: "white" }}
           shadow={5}
           _text={{ color: "#6F019C", fontSize: "lg" }}
           bg="white"

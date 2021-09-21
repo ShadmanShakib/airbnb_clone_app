@@ -20,7 +20,7 @@ export default function FlexibleHeader(props: FlexibleHeaderProps) {
   const { handleGoBack } = props;
   const [activeMenu, setActiveMenu] = React.useState("Treehouses");
   return (
-    <Box position="fixed" bg="white" w="100%" pt="6" zIndex={1}>
+    <Box position="absolute" bg="white" w="100%" pt="6" zIndex={1}>
       <HStack px="6" alignItems="center" justifyContent="space-between">
         <Pressable onPress={handleGoBack}>
           <AntDesign name="arrowleft" size={24} color="black" />
@@ -54,7 +54,10 @@ export default function FlexibleHeader(props: FlexibleHeaderProps) {
                   source={{ uri: item.url }}
                 />
               </Box>
-              <Text pl="2" fontWeight="bold">
+              <Text
+                color={activeMenu === item.title ? "black" : "gray.400"}
+                pl="2"
+              >
                 {item.title}
               </Text>
             </HStack>
