@@ -6,3 +6,4 @@ export { default as ProfileScreen } from "./ProfileScreen";
 export { default as SearchModal } from "./SearchModal";
 export { default as Flexible } from "./Flexible";
 export { default as SingleLoaction } from "./SingleLocation";
+export { default as MapView } from "./MapView";
