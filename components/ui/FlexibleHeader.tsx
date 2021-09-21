@@ -54,7 +54,12 @@ export default function FlexibleHeader(props: FlexibleHeaderProps) {
                   source={{ uri: item.url }}
                 />
               </Box>
-              <Text pl="2">{item.title}</Text>
+              <Text
+                color={activeMenu === item.title ? "black" : "gray.400"}
+                pl="2"
+              >
+                {item.title}
+              </Text>
             </HStack>
           </Pressable>
         )}

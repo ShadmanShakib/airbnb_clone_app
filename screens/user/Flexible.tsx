@@ -21,7 +21,7 @@ export default function Flexible({ navigation }: any) {
       </View>
       <Pressable
         bottom="10"
-        left={width / 2 - 50}
+        left={width / 2 - 45}
         borderRadius={20}
         bg="black"
         position="absolute"

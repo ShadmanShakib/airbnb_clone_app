@@ -10,7 +10,7 @@ interface IPlaceCard {
 export default function PlaceCard(props: IPlaceCard) {
   const { url, alt, title } = props;
   return (
-    <Box>
+    <Box ml="6">
       <Image
         borderRadius={10}
         height="272px"

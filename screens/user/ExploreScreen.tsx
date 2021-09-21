@@ -49,8 +49,6 @@ export default function ExploreScreen({ navigation }: any) {
         <FlatList
           showsHorizontalScrollIndicator={false}
           pb="3"
-          pl="6"
-          ItemSeparatorComponent={() => <Box width="5" />}
           horizontal={true}
           data={PlacesData}
           keyExtractor={(item) => item.id}

@@ -35,7 +35,12 @@ export default function LocationCard(props: LocationCardProps) {
         <Text fontSize="lg" fontWeight="bold">
           {title}
         </Text>
-        <Text fontSize="lg">${price}/night</Text>
+        <HStack>
+          <Text fontSize="xl" fontWeight="bold">
+            ${price}
+          </Text>
+          <Text fontSize="lg">/night</Text>
+        </HStack>
       </HStack>
       <Text>{distance} kilometer's way</Text>
     </View>

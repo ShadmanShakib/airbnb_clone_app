@@ -6,6 +6,7 @@ import {
   ScrollView,
   Button,
   FlatList,
+  Pressable,
   HStack,
 } from "native-base";
 import { API_KEY } from "../../constants";
@@ -19,6 +20,7 @@ interface IData {
 export default function SearchModal() {
   const [loaction, setLoaction] = React.useState("");
   const [data, setData] = React.useState<null | IData[]>(null);
+
   const url = "https://api.locationiq.com/v1/autocomplete.php?key=";
   const fetchPlaces = () => {
     if (loaction.length > 3)
@@ -32,7 +34,7 @@ export default function SearchModal() {
   }, [loaction]);
   return (
     <Box pt="10" bg="white" h="100%">
-      <Box px="6" mb="2">
+      <Box mb="2">
         <Input
           px="3"
           placeholder="Where are you going?"
@@ -41,54 +43,53 @@ export default function SearchModal() {
         />
       </Box>
 
-      <Box mb="6" h="1px" bg="gray.200" w="100%" />
-
-      <Box px="6">
-        <Text fontWeight="bold" fontSize="lg">
-          GO ANYWHERE,ANYTIME
-        </Text>
-        <Button
+      <Box h="1px" bg="gray.200" w="100%" />
+      <Box px="6" py="3">
+        <Pressable
           borderWidth="1px"
           borderColor="gray.300"
           borderRadius={30}
-          my="3"
           py="4"
-          shadow={8}
           bg="white"
-          _text={{ color: "#3b07bb" }}
-          onPress={() => console.log(data)}
+          _pressed={{ bgColor: "white", opacity: 0.6 }}
         >
-          I'm Flexible
-        </Button>
-
-        <ScrollView mt="6">
-          <Text mb="3" fontWeight="bold">
-            GETAWAYS NEARS YOU
+          <Text textAlign="center" fontWeight="bold" color="#3b07bb">
+            I'm Flexible
           </Text>
-          <FlatList
-            pb="3"
-            data={NearbyData}
-            renderItem={NearbyCard}
-            keyExtractor={(item) => item.id}
-          />
-        </ScrollView>
+        </Pressable>
       </Box>
+
+      <Text px="6" mb="3" fontWeight="bold">
+        GETAWAYS NEARS YOU
+      </Text>
+      <FlatList
+        px="6"
+        pb="3"
+        data={NearbyData}
+        renderItem={NearbyCard}
+        keyExtractor={(item) => item.id}
+      />
+
       {loaction.length > 0 && (
         <Box
           bg="white"
-          mt="16"
+          mt="24"
           shadow={3}
+          zIndex={3}
           h="100%"
           width="100%"
           position="absolute"
         >
           {data && (
             <FlatList
+              pt="5"
               data={data}
               renderItem={({ item }) => {
                 return (
-                  <HStack h="10" px="6" mb="3" alignItems="center">
-                    <Entypo name="location-pin" size={24} color="black" />
+                  <HStack h="10" pt="2" px="6" mb="4" alignItems="center">
+                    <Box p="3" borderRadius={4} bg="gray.300">
+                      <Entypo name="location-pin" size={24} color="black" />
+                    </Box>
                     <Text ml="4">{item.display_name}</Text>
                   </HStack>
                 );
