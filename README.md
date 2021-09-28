@@ -1,5 +1,5 @@
 ## Airbnb clone with React Native by Shadman Shakib
-[![Airbnb clone by Shadman Shakib](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/IsjNFnTZoRM)
+[![Airbnb clone by Shadman Shakib](https://img.youtube.com/vi/IsjNFnTZoRM/0.jpg)](https://youtu.be/IsjNFnTZoRM)
 #### Techlogies used
 - React
 - React Native
