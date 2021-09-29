@@ -7,3 +7,4 @@
 - Native-base
 - React-navigation
 - Firebase
+- Reanimated 2
