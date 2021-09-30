@@ -9,7 +9,7 @@ import firebase from "firebase/app";
 import { MainProvider } from "./context";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBWjpdfGbxfUtS41DCn1mBFxu8oAMBX6H4",
+  apiKey: "Your_API_KEy",
   authDomain: "airbnb-clone-shadmanshakib.firebaseapp.com",
   projectId: "airbnb-clone-shadmanshakib",
   storageBucket: "airbnb-clone-shadmanshakib.appspot.com",
